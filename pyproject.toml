@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "pagesnap"
+version = "0.0.1"
+description = "Saving webpage in a single HTML file, based on playwright"
+authors = ["maxiee <maxieewong@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+playwright = "^1.33.0"
+beautifulsoup4 = "^4.12.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

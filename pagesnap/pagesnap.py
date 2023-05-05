@@ -1,3 +1,4 @@
+import argparse
 import asyncio
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
@@ -210,10 +211,14 @@ def embed_resource(content_type, data):
         base64_data = base64.b64encode(data).decode('utf-8')
     return f'data:{content_type};base64,{base64_data}'
 
+def main():
+    """Main function."""
+    parser = argparse.ArgumentParser(description='Save a webpage as a single file.')
+    parser.add_argument('url', help='URL of the webpage to save')
+    parser.add_argument('output_filename', help='Output filename')
+    args = parser.parse_args()
+    asyncio.run(save_as_single_file(args.url, args.output_filename))
+
 if __name__ == '__main__':
-    import sys
-    if len(sys.argv) < 3:
-        print('Usage: python pagesnap.py <url> <output_filename>')
-        sys.exit(1)
-    asyncio.run(save_as_single_file(sys.argv[1], sys.argv[2]))
+    main()
 

@@ -5,6 +5,10 @@ description = "Saving webpage in a single HTML file, based on playwright"
 authors = ["maxiee <maxieewong@gmail.com>"]
 readme = "README.md"
 license = "MIT"
+repository = "https://github.com/maxiee/pagesnap"
+
+[tool.poetry.scripts]
+pagesnap = 'pagesnap.pagesnap:main'
 
 [tool.poetry.dependencies]
 python = "^3.10"

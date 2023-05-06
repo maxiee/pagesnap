@@ -8,6 +8,30 @@ PageSnap 能将网页离线保存为单页 HTML，实现对网页的离线保存
 
 注意：目前该项目仍处于早期功能开发阶段，暂时还无法作为库直接引用，相关的 API 还在开发中。可以保持关注，也欢迎直接 clone 项目进行体验、交流。
 
+## 作为库
+
+开发中……
+
+## 作为命令行
+
+使用 pip 安装命令：
+
+```
+pip install pagesnap
+```
+
+初始化 Playwright：
+
+```
+playwright install
+```
+
+开始使用：
+
+```
+pagesnap https://example.com/ test.html
+```
+
 ## 讨论
 
 如果有好的建议或者改进意见，欢迎提交 issue 或者 pr，如果喜欢这个项目，欢迎 star。

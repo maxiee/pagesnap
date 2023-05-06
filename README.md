@@ -10,6 +10,30 @@ As a Python library, PageSnap can be easily added as a dependency to other proje
 
 Note: Currently, this project is still in the early stages of feature development and cannot be directly used as a library. The related APIs are still under development. You can keep an eye on the progress, or feel free to clone the project to try it out and share your thoughts.
 
+## As a Library
+
+In development...
+
+## As a Command Line
+
+Use the following pip command to install:
+
+```
+pip install pagesnap
+```
+
+Initialize Playwright:
+
+```
+playwright install
+```
+
+Start using:
+
+```
+pagesnap https://example.com/ test.html
+```
+
 ## Discussion
 
 If you have any suggestions or improvements, please feel free to submit an issue or pull request. If you like this project, please give it a star.

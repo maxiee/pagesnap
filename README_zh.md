@@ -10,7 +10,26 @@ PageSnap 能将网页离线保存为单页 HTML，实现对网页的离线保存
 
 ## 作为库
 
-开发中……
+PageSnap 提供基于 asyncio 的 API，在您的 playwright 工程中，只需要两步，即可完成对页面的离线保存，示例代码如下：
+
+
+```python
+# Step1: Hook page to intercept requests and save resources
+#        note: you can also hook after goto, but you may miss some resources
+await hook_page(page) 
+
+# Develop your code, doing your actions
+await page.goto(url)
+# It's better to wait for the page to be fully loaded
+await page.wait_for_load_state("networkidle")
+
+# Step2: Get the page content
+embedded_html = await page_snap(page)
+
+# Then you can save it to a file
+with open(output_filename, 'w', encoding='utf-8') as f:
+    f.write(embedded_html)
+```
 
 ## 作为命令行
 

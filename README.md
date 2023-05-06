@@ -12,7 +12,25 @@ Note: Currently, this project is still in the early stages of feature developmen
 
 ## As a Library
 
-In development...
+PageSnap provides an asyncio-based API. In your Playwright project, you can complete the offline saving of a page in just two steps. Here's an example code:
+
+```python
+# Step1: Hook page to intercept requests and save resources
+#        note: you can also hook after goto, but you may miss some resources
+await hook_page(page) 
+
+# Develop your code, doing your actions
+await page.goto(url)
+# It's better to wait for the page to be fully loaded
+await page.wait_for_load_state("networkidle")
+
+# Step2: Get the page content
+embedded_html = await page_snap(page)
+
+# Then you can save it to a file
+with open(output_filename, 'w', encoding='utf-8') as f:
+    f.write(embedded_html)
+```
 
 ## As a Command Line
 

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pagesnap"
-version = "0.0.1"
+version = "0.0.2"
 description = "Saving webpage in a single HTML file, based on playwright"
 authors = ["maxiee <maxieewong@gmail.com>"]
 readme = "README.md"
